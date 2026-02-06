@@ -6,6 +6,8 @@
 
 ## 적용 방법
 ### dataLayer 생성
+<img width="892" height="654" alt="image" src="https://github.com/user-attachments/assets/171049e6-67a7-4eb5-84ad-ad95194b9227" />
+
 1. Google Tag Manager에서 태그를 생성합니다.
 2. 맞춤 HTML 태그에 하기 코드를 추가합니다.
 
@@ -20,21 +22,29 @@ window.ReaderTrackerConfig = {
 
 <script src="https://cdn.jsdelivr.net/gh/lud0914/specific_reader_gtm/reader-tracker.js">
 ```
+<img width="890" height="326" alt="image" src="https://github.com/user-attachments/assets/7aacf493-27ea-4ec9-a970-e9603d4bf3a4" />
 
-3. 트리거로 DOM 사용 가능을 활용하는 것을 추천합니다.
+3. 트리거는 가급적 'DOM 사용 가능' 으로 적용하시길 권장드립니다.
 
-### 태그 구성
-dataLayer 생성이 완료된 경우 실제 GA4 태그를 구성합니다.
-1. Google Tag Manager 태그 생성에서 GA4 이벤트를 생성합니다.
-2. G-tag 입력 후 이벤트명을 원하는 명칭으로 넣습니다.
-3. 이벤트 트리거는 맞춤 이벤트로 생성하며, 이벤트명은 "specific_reader"로 진행합니다.
-가급적 일부 맞춤 이벤트로 실제 블로그 콘텐츠에서만 작동하도록 구성합니다.
-4. 그 후 매개변수를 구성 후 태그를 저장합니다.
+### 트리거 구성
+<img width="887" height="328" alt="image" src="https://github.com/user-attachments/assets/88dacc06-d06a-40d5-b033-ef68d65a1cc7" />
+1. 트리거는 가급적 DOM 사용 가능으로 넣습니다.
+2. 메인페이지 등이 포함되는 경우, Bouncer가 높게 나타나 데이터 신뢰성을 낮출 수 있으니 가급적 Blog 등 아티클 위주로 사용을 권장합니다.
 
 #### 매개변수 구성
+<img width="889" height="415" alt="image" src="https://github.com/user-attachments/assets/b50d877b-9dc4-4f58-baf5-964f006b1230" />
 1. Google Tag Manager 내 변수에 접속 후 변수 생성을 진행합니다.
 2. 변수를 데이터 영역 변수로 잡고 "reader_type"을 입력합니다.
 3. 해당 변수를 매개변수로 구성하면 됩니다.
+
+### 태그 구성
+<img width="891" height="430" alt="image" src="https://github.com/user-attachments/assets/ee3016c8-bf26-4cff-ba12-3d4881364f7b" />
+1. 태그 구성 시 유의 사항은 트리거로 사용하는 '맞춤 이벤트'에 'specific_reader' 를 입력해야 합니다.
+2. 트리거의 작동은 가급적 blog 등 아티클 위주로 사용하는 것을 권장합니다. 랜딩페이지도 적용 시, bouncer가 증가하여 데이터 정재 과정이 발생할 수 있습니다.
+
+### 완료된 태그 구성 예시
+<img width="891" height="358" alt="image" src="https://github.com/user-attachments/assets/fa9d86a8-d952-4d6c-9351-bcd08ec70c81" />
+
 
 매개변수 구성 시, 활용에 따라 유저 속성/이벤트 속성을 나눠서 진행합니다.
 - 콘텐츠별 유저의 읽기가 궁금하다면, 이벤트 속성
